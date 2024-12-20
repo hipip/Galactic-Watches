@@ -1,0 +1,66 @@
+[
+    {
+        "id":0,
+        "name":"Royal Oak Perpetual Calendar “John Mayer",
+        "imgUrl":"https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-1028?dpr=off&fmt=avif-alpha&dpr=off",
+        "description": "Designed in collaboration with John Mayer, this limited edition pairs an 18-carat white gold case and bracelet with the Manufacture's new shimmering, embossed “Crystal Sky” dial in a dark blue tone. It is also the last to be equipped with the selfwinding perpetual calendar, Calibre 5134.",
+        "rating": 4.7,
+        "price": 699.99
+    },
+    {
+        "id":1,
+        "name":"Royal Oak Perpetual Calendar Special Edition",
+        "imgUrl":"https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-948?dpr=off&fmt=avif-alpha&dpr=off",
+        "description": "The 18-carat white gold Royal Oak Perpetual Calendar is illuminated by a vivid purple Grande Tapisserie dial and a bezel set with baguette-cut diamonds.",
+        "rating": 4.2,
+        "price": 779.99
+    },
+    {
+        "id":2,
+        "name":"Code 11.59 by Audemars Piguet Selfwinding",
+        "imgUrl":"https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-1004?dpr=off&fmt=avif-alpha&dpr=off",
+        "description": "Housed in a new 38 mm sized case, this model unites a prune coloured dial and alligator strapA with pink gold to deliver a rich and warm aesthetic.",
+        "rating": 4.2,
+        "price": 559.99
+    },
+    {
+        "id":3,
+        "name":"Patek Philippe 5811/1G - Nautilus Self-winding",
+        "imgUrl":"https://i.imgur.com/P27wnKW.png",
+        "description": "As the reinterpretation of a design icon, the Ref. 5811/1G-001 Nautilus features a case and bracelet in white gold as well as a blue sunburst dial with a black gradation to the periphery.",
+        "rating": 3.7,
+        "price": 399.99
+    },
+    {
+        "id":4,
+        "name":"Rolex Submariner Black ceramic bezel",
+        "imgUrl":"https://media.rolex.com/image/upload/q_auto:eco/f_auto/$path_!v1:catalogue:2024:upright-c:m124060-0001!/t_v7-config-with-shadow-landscape/c_limit,w_800/v1/catalogue/2024/upright-c-shadow/m124060-0001",
+        "description": "It was one of our very first Professional watches and has become the archetype of tool watches dedicated to diving. ",
+        "rating": 4.7,
+        "price": 899.99
+    },
+    {
+        "id":5,
+        "name":"Rolex Datejust 36 Oystersteel and white gold",
+        "imgUrl":"https://media.rolex.com/image/upload/q_auto:eco/f_auto/$path_!v1:catalogue:2024:upright-c:m126234-0051!/t_v7-config-with-shadow-landscape/c_limit,w_800/v1/catalogue/2024/upright-c-shadow/m126234-0051",
+        "description": "the Datejust has continued to reinvent itself while symbolizing Rolex's definition of classic elegance. A milestone in watchmaking history, it was the first self-winding waterproof chronometer wristwatch to feature a window displaying the date. ",
+        "rating": 4.9,
+        "price": 789.99
+    },
+    {
+        "id":6,
+        "name":"Piaget Automatic Rose Gold Ultra-Thin Watch G0A48125",
+        "imgUrl":"https://i.imgur.com/c7uL9Bb.png",
+        "description": "Altiplano Ultimate Automatic watch, 41 mm. Case in 18K rose gold. One of the thinnest automatic watches in the world: 4.30 mm, a total symbiosis between the case and the Manufacture movement.",
+        "rating": 4.4,
+        "price": 659.99
+    },
+    {
+        "id":7,
+        "name":"Laureato Chronograph Aston Martin Edition",
+        "imgUrl":"https://www.girard-perregaux.com/media/catalog/product/1/2/124e40aa06d524fcf870ce92e4f62e7f.png?store=row_en&image-type=image",
+        "description": " Its styling masterfully plays with shapes, textures, and light, tailored to those who appreciate luxury and performance.",
+        "rating": 4.4,
+        "price": 2149.99
+    }
+]

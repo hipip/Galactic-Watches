@@ -1,10 +1,19 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  // fetch data here an pass it to pages
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <h1>Home Page</h1>,
+    },
+  ]);
+
   return (
     <>
-      <h1>Hello, World!</h1>
-      <h2>This will be a great project !</h2>
+      <RouterProvider router={router} />
     </>
   );
 }
