@@ -1,14 +1,20 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import CartButton from "../components/CartButton";
+import Popup from "../components/Popup";
 
 const Watchpage = ({ watches, addToCart }) => {
   const { watchId } = useParams();
   const watch = watches.find((w) => w.id === parseInt(watchId));
   const [quantity, setQuantity] = useState(1);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
   return (
     <>
       <div id="watch-page" className="page">
@@ -49,7 +55,10 @@ const Watchpage = ({ watches, addToCart }) => {
               <button
                 type="button"
                 id="add-to-cart-btn"
-                onClick={() => addToCart(parseInt(watchId), parseInt(quantity))}
+                onClick={() => {
+                  addToCart(parseInt(watchId), parseInt(quantity));
+                  handleShowPopup();
+                }}
               >
                 Add to Cart
               </button>
@@ -58,6 +67,13 @@ const Watchpage = ({ watches, addToCart }) => {
         </div>
       </div>
       <CartButton />
+      {showPopup && (
+        <Popup
+          bgColor="#009b1a"
+          message="Item Added to Cart successfully!"
+          onClose={() => setShowPopup(false)}
+        />
+      )}
     </>
   );
 };
