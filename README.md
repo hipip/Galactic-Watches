@@ -1,8 +1,10 @@
-# React + Vite
+# Galactic Watches 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Galactic Watches is a small watch store project created to practice and enhance my skills with React Router.
 
-Currently, two official plugins are available:
+Features
+Cart Functionality: Add and remove items to simulate a shopping experience.
+Mock Database: Data is stored in a JSON file to mimic a real backend database.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To Dos
+[ ] make the cart persistent using localStorage Api
