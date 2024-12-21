@@ -5,7 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import CartButton from "../components/CartButton";
 
-const Watchpage = ({ watches }) => {
+const Watchpage = ({ watches, addToCart }) => {
   const { watchId } = useParams();
   const watch = watches.find((w) => w.id === parseInt(watchId));
   const [quantity, setQuantity] = useState(1);
@@ -13,7 +13,7 @@ const Watchpage = ({ watches }) => {
     <>
       <div id="watch-page" className="page">
         <Navbar />
-        <h1 className="page-title">Watch</h1>
+        <h1 className="page-title">Watch Details</h1>
         <div className="watch-page-card">
           <div className="watch-page-card-img-wrapper">
             <img
@@ -38,6 +38,7 @@ const Watchpage = ({ watches }) => {
                 <label htmlFor="quantity">Quantity</label>
                 <input
                   type="number"
+                  min="0"
                   name="quantity"
                   className="qte-inp"
                   id="quantity"
@@ -45,7 +46,11 @@ const Watchpage = ({ watches }) => {
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
-              <button type="button" id="add-to-cart-btn">
+              <button
+                type="button"
+                id="add-to-cart-btn"
+                onClick={() => addToCart(parseInt(watchId), parseInt(quantity))}
+              >
                 Add to Cart
               </button>
             </div>

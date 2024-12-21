@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const WatchCard = ({ watch, delay }) => {
+const WatchCard = ({ watch, delay, addToCart }) => {
   const { id, name, imgUrl, description, rating, price } = watch;
 
   const [isCardVisible, setIsCardVisible] = useState(false);
@@ -30,7 +30,7 @@ const WatchCard = ({ watch, delay }) => {
           <p className="watch-price">{price}$</p>
         </div>
       </div>
-      <button className="add-to-cart-btn">
+      <button className="add-to-cart-btn" onClick={() => addToCart(id, 1)}>
         <FontAwesomeIcon icon={faAdd} className="add-icon" />
         Add To Cart
       </button>
