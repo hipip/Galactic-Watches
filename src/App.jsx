@@ -6,11 +6,15 @@ import WatchesPage from "./pages/WatchesPage";
 import WatchPage from "./pages/WatchPage";
 import AboutPage from "./pages/AboutPage";
 import CartPage from "./pages/CartPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ErrorPage from "./pages/ErrorPage";
 
 function App() {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    console.log(storedCart);
+    return storedCart ? JSON.parse(storedCart) : {};
+  });
 
   const addToCart = (watchId, quantity) => {
     const oldQte = cart[watchId] || 0;
@@ -22,6 +26,10 @@ function App() {
     delete newCart[watchId];
     setCart(newCart);
   };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const router = createBrowserRouter([
     {
