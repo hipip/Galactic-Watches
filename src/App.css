@@ -200,15 +200,19 @@ button {
   backdrop-filter: blur(5px);
   box-shadow: 0 0 0 -5px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease-in-out;
+  opacity: 0;
 }
 
 .watch-card.animate-card {
-  animation: card-appear 0.5s ease;
+  animation: card-appear 0.5s ease forwards;
 }
 @keyframes card-appear {
   from {
     opacity: 0;
     transform: translateY(500px);
+  }
+  70% {
+    opacity: 0.2;
   }
   to {
     opacity: 1;
@@ -289,4 +293,87 @@ button {
 
 .add-icon {
   transition: transform 0.4s ease;
+}
+
+#watch-page {
+  display: flex;
+  gap: 50px;
+}
+
+.watch-page-card {
+  display: flex;
+  padding: 20px 40px;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+}
+
+.watch-page-card-img-wrapper {
+  width: 300px;
+  flex: 0 1 auto;
+}
+
+.watch-page-card-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.watch-page-card-text-area {
+  width: 400px;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+}
+
+.watch-page-card-rating-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.add-to-cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.inp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.qte-inp {
+  text-align: center;
+  max-width: 65px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  border-radius: 30px;
+}
+
+#add-to-cart-btn {
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  background-color: black;
+  transition: 0.3s ease;
+  color: white;
+}
+#add-to-cart-btn:hover {
+  box-shadow: 0 0 35px -5px rgba(0, 0, 0, 0.4);
 }
