@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --main-accent: rgba(15, 40, 90, 0.93);
+  --main-accent: rgba(0, 93, 61, 0.9);
 }
 
 * {
@@ -13,33 +13,42 @@
 
 html {
   font-family: "Montserrat", serif;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
 }
 
 .nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
   display: flex;
   gap: 60px;
-  padding: 10px 60px;
-  margin: 20px 0;
+  padding: 10px 100px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 100px;
 }
+
 .nav-link {
-  padding: 10px 30px;
-  color: white;
+  padding: 10px 40px;
+  color: black;
   font-size: 1.2rem;
   font-weight: 400;
   border-radius: 30px;
 }
 .nav-link:not(.active):hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-link.active {
-  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  background-color: var(--main-accent);
 }
 
-#home-page {
+.page {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
@@ -50,6 +59,7 @@ a {
     url("https://images.unsplash.com/photo-1625513123245-fcb02d69ad12?q=100&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   color: white;
+  background-attachment: fixed;
 }
 
 .hero-area {
@@ -138,6 +148,9 @@ a {
 .spinner-current-img.fading {
   opacity: 0;
 }
+.spinner-watch-name {
+  font-weight: 200;
+}
 .arrow-icon {
   font-size: 2.5rem;
 }
@@ -156,4 +169,93 @@ a {
 .spinner-current-img {
   width: 250px;
   height: auto;
+}
+
+.watches-container {
+  margin: 0 100px;
+  margin-top: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.watch-card {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  border-radius: 40px;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 0 -5px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.watch-card.animate-card {
+  animation: card-appear 0.5s ease;
+}
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.watch-card:hover {
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 0 45px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px);
+}
+
+.watch-card:hover .watch-image-wrapper {
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+.watch-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+  flex: 0 1 auto;
+  transition: transform 0.4s ease;
+}
+
+.watch-image-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.watch-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 2 1 0;
+}
+.watch-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.watch-rating-price-container {
+  margin: 10px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.page-title {
+  margin: 20px 0;
 }

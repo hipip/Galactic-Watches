@@ -16,7 +16,7 @@ function App() {
     },
     {
       path: "/watches",
-      element: <WatchesPage />,
+      element: <WatchesPage watches={watches} />,
     },
     {
       path: "/watches/:watchId",

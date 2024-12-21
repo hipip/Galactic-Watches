@@ -12,7 +12,7 @@ const ImgSpinner = ({ watches }) => {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % watches.length);
       setIsFading(false);
-    }, 500);
+    }, 1000);
   };
 
   const handlePrevious = () => {
@@ -22,7 +22,7 @@ const ImgSpinner = ({ watches }) => {
         (prevIndex) => (prevIndex - 1 + watches.length) % watches.length
       );
       setIsFading(false);
-    }, 500);
+    }, 1000);
   };
 
   return (

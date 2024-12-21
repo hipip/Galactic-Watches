@@ -3,7 +3,7 @@ import ImgSpinner from "../components/ImgSpinner";
 
 const HomePage = ({ watches }) => {
   return (
-    <div id="home-page">
+    <div id="home-page" className="page">
       <Navbar />
       <div className="hero-area">
         <div className="text-area">

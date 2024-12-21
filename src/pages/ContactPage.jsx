@@ -1,5 +1,11 @@
+import Navbar from "../components/Navbar";
+
 const ContactPage = () => {
-  return <div>ContactPage</div>;
+  return (
+    <div id="contact-page" className="page">
+      <Navbar />
+    </div>
+  );
 };
 
 export default ContactPage;
