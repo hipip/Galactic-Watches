@@ -10,17 +10,17 @@ import CartPage from "./pages/CartPage";
 import { useState } from "react";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({});
 
   const addToCart = (watchId, quantity) => {
-    const foundWatch = cart.find((watch) => watch.id === watchId);
-    if (foundWatch) {
-      const newQte = foundWatch.quantity + quantity;
-      setCart([
-        ...cart.filter((item) => item.id !== watchId),
-        { id: watchId, quantity: newQte },
-      ]);
-    } else setCart([...cart, { id: watchId, quantity: 1 }]);
+    const oldQte = cart[watchId] || 0;
+    setCart({ ...cart, [watchId]: oldQte + quantity });
+  };
+
+  const deleteFromCart = (watchId) => {
+    const newCart = { ...cart };
+    delete newCart[watchId];
+    setCart(newCart);
   };
 
   const router = createBrowserRouter([
@@ -38,7 +38,13 @@ function App() {
     },
     {
       path: "/cart",
-      element: <CartPage cart={cart} />,
+      element: (
+        <CartPage
+          watches={watches}
+          cart={cart}
+          deleteFromCart={deleteFromCart}
+        />
+      ),
     },
     {
       path: "/contact",

@@ -441,3 +441,50 @@ button {
     translate: 0;
   }
 }
+
+.cart-table {
+  border-collapse: separate;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  padding: 20px 40px;
+  color: black;
+}
+
+.cart-table th {
+  padding: 10px 20px;
+  /* border-radius: 30px; */
+  color: black;
+}
+
+.cart-row {
+  position: relative;
+  color: black;
+}
+
+.cart-row-delete-btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(-30%, -50%);
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cart-row td {
+  padding: 20px 40px;
+}
+
+.cart-row:hover .cart-row-delete-btn {
+  opacity: 1;
+}
+
+.cart-row-img img {
+  width: 50px;
+  height: auto;
+}
