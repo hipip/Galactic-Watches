@@ -1,4 +1,4 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,14 +13,13 @@ const WatchCard = ({ watch, delay }) => {
   }, []);
 
   return (
-    <Link
+    <div
       className={`watch-card ${isCardVisible ? "animate-card" : ""}`}
-      to={`/watches/${id}`}
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className="watch-image-wrapper">
+      <Link className="watch-image-wrapper" to={`/watches/${id}`}>
         <img src={imgUrl} alt={name} />
-      </div>
+      </Link>
       <div className="watch-details-container">
         <p className="watch-name">{name}</p>
         <div className="watch-rating-price-container">
@@ -31,7 +30,11 @@ const WatchCard = ({ watch, delay }) => {
           <p className="watch-price">{price}$</p>
         </div>
       </div>
-    </Link>
+      <button className="add-to-cart-btn">
+        <FontAwesomeIcon icon={faAdd} className="add-icon" />
+        Add To Cart
+      </button>
+    </div>
   );
 };
 

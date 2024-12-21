@@ -7,6 +7,7 @@ import WatchPage from "./pages/WatchPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import CartPage from "./pages/CartPage";
+import { useState } from "react";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,7 +21,7 @@ function App() {
     },
     {
       path: "/watches/:watchId",
-      element: <WatchPage />,
+      element: <WatchPage watches={watches} />,
     },
     {
       path: "/cart",
