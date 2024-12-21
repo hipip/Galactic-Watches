@@ -28,14 +28,6 @@ const Navbar = () => {
         Cart
       </NavLink>
       <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          isActive ? "nav-link active" : "nav-link"
-        }
-      >
-        Contact
-      </NavLink>
-      <NavLink
         to="/about"
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"

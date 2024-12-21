@@ -4,10 +4,10 @@ import watches from "./assets/db.json";
 import HomePage from "./pages/HomePage";
 import WatchesPage from "./pages/WatchesPage";
 import WatchPage from "./pages/WatchPage";
-import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import CartPage from "./pages/CartPage";
 import { useState } from "react";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   const [cart, setCart] = useState({});
@@ -27,6 +27,7 @@ function App() {
     {
       path: "/",
       element: <HomePage watches={watches} />,
+      errorElement: <ErrorPage />,
     },
     {
       path: "/watches",
@@ -45,10 +46,6 @@ function App() {
           deleteFromCart={deleteFromCart}
         />
       ),
-    },
-    {
-      path: "/contact",
-      element: <ContactPage />,
     },
     {
       path: "/about",
