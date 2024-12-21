@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import ImgSpinner from "../components/ImgSpinner";
+import CartButton from "../components/CartButton";
 
 const HomePage = ({ watches }) => {
   return (
@@ -16,6 +17,7 @@ const HomePage = ({ watches }) => {
           <ImgSpinner watches={watches} />
         </div>
       </div>
+      <CartButton />
     </>
   );
 };

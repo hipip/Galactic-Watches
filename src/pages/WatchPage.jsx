@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import CartButton from "../components/CartButton";
 
 const Watchpage = ({ watches }) => {
   const { watchId } = useParams();
@@ -51,6 +52,7 @@ const Watchpage = ({ watches }) => {
           </div>
         </div>
       </div>
+      <CartButton />
     </>
   );
 };
