@@ -1,7 +1,7 @@
 import CartButton from "../components/CartButton";
 import Navbar from "../components/Navbar";
 
-const AboutPage = () => {
+const AboutPage = ({ cartLength }) => {
   return (
     <>
       <div id="about-page" className="page">
@@ -17,7 +17,7 @@ const AboutPage = () => {
           </p>
         </div>
       </div>
-      <CartButton />
+      <CartButton cartLength={cartLength} />
     </>
   );
 };

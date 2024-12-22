@@ -3,7 +3,7 @@ import CartButton from "../components/CartButton";
 import Navbar from "../components/Navbar";
 import CartItem from "../components/CartItem";
 
-const CartPage = ({ watches, cart, deleteFromCart }) => {
+const CartPage = ({ watches, cart, deleteFromCart, cartLength }) => {
   const watchesInCart = watches
     .filter((watch) => watch.id in cart)
     .map((watch) => ({ ...watch, quantity: cart[watch.id] }));
@@ -53,7 +53,7 @@ const CartPage = ({ watches, cart, deleteFromCart }) => {
           </table>
         )}
       </div>
-      <CartButton />
+      <CartButton cartLength={cartLength} />
     </>
   );
 };

@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import ImgSpinner from "../components/ImgSpinner";
 import CartButton from "../components/CartButton";
 
-const HomePage = ({ watches }) => {
+const HomePage = ({ watches, cartLength }) => {
   return (
     <>
       <div id="home-page" className="page">
@@ -17,7 +17,7 @@ const HomePage = ({ watches }) => {
           <ImgSpinner watches={watches} />
         </div>
       </div>
-      <CartButton />
+      <CartButton cartLength={cartLength} />
     </>
   );
 };

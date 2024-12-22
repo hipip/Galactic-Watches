@@ -2,7 +2,7 @@ import CartButton from "../components/CartButton";
 import Navbar from "../components/Navbar";
 import WatchCard from "../components/WatchCard";
 
-const WatchesPage = ({ watches, addToCart }) => {
+const WatchesPage = ({ watches, addToCart, cartLength }) => {
   return (
     <>
       <div id="watches-page" className="page">
@@ -19,7 +19,7 @@ const WatchesPage = ({ watches, addToCart }) => {
           ))}
         </div>
       </div>
-      <CartButton />
+      <CartButton cartLength={cartLength} />
     </>
   );
 };

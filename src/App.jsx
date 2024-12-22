@@ -34,16 +34,30 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage watches={watches} />,
+      element: (
+        <HomePage watches={watches} cartLength={Object.keys(cart).length} />
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/watches",
-      element: <WatchesPage watches={watches} addToCart={addToCart} />,
+      element: (
+        <WatchesPage
+          watches={watches}
+          addToCart={addToCart}
+          cartLength={Object.keys(cart).length}
+        />
+      ),
     },
     {
       path: "/watches/:watchId",
-      element: <WatchPage watches={watches} addToCart={addToCart} />,
+      element: (
+        <WatchPage
+          watches={watches}
+          addToCart={addToCart}
+          cartLength={Object.keys(cart).length}
+        />
+      ),
     },
     {
       path: "/cart",
@@ -52,12 +66,13 @@ function App() {
           watches={watches}
           cart={cart}
           deleteFromCart={deleteFromCart}
+          cartLength={Object.keys(cart).length}
         />
       ),
     },
     {
       path: "/about",
-      element: <AboutPage />,
+      element: <AboutPage cartLength={Object.keys(cart).length} />,
     },
   ]);
 

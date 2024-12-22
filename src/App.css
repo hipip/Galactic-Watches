@@ -526,6 +526,17 @@ button {
   display: none;
 }
 
+.cart-items-length {
+  position: absolute;
+  top: 0;
+  left: -15px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: crimson;
+}
 @media (max-width: 916px) {
   .nav-bar-container {
     width: 100%;
@@ -537,6 +548,7 @@ button {
     width: 100%;
     color: white;
     padding: 10px 40px;
+    background-color: var(--main-accent);
   }
 
   .mobile-nav-bar #logo {

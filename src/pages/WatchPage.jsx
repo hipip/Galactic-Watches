@@ -6,7 +6,7 @@ import { useState } from "react";
 import CartButton from "../components/CartButton";
 import Popup from "../components/Popup";
 
-const Watchpage = ({ watches, addToCart }) => {
+const Watchpage = ({ watches, addToCart, cartLength }) => {
   const { watchId } = useParams();
   const watch = watches.find((w) => w.id === parseInt(watchId));
   const [quantity, setQuantity] = useState(1);
@@ -66,7 +66,7 @@ const Watchpage = ({ watches, addToCart }) => {
           </div>
         </div>
       </div>
-      <CartButton />
+      <CartButton cartLength={cartLength} />
       {showPopup && (
         <Popup
           bgColor="#009b1a"
