@@ -1,12 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import CartButton from "../components/CartButton";
 import Navbar from "../components/Navbar";
 import CartItem from "../components/CartItem";
 
 const CartPage = ({ watches, cart, deleteFromCart, cartLength }) => {
-  const watchesInCart = watches
-    .filter((watch) => watch.id in cart)
-    .map((watch) => ({ ...watch, quantity: cart[watch.id] }));
+  const watchesInCart = useMemo(
+    () =>
+      watches
+        .filter((watch) => watch.id in cart)
+        .map((watch) => ({ ...watch, quantity: cart[watch.id] })),
+    [cart, watches]
+  );
+
+  const totalPrice = useMemo(() => {
+    return watchesInCart.reduce(
+      (sum, curr) => sum + curr.quantity * curr.price,
+      0
+    );
+  }, [cart]);
 
   return (
     <>
@@ -40,13 +51,7 @@ const CartPage = ({ watches, cart, deleteFromCart, cartLength }) => {
                   <h2>TOTAL</h2>
                 </td>
                 <td>
-                  <h3>
-                    {watchesInCart.reduce(
-                      (sum, curr) => sum + curr.quantity * curr.price,
-                      0
-                    )}
-                    $
-                  </h3>
+                  <h3>{totalPrice}$</h3>
                 </td>
               </tr>
             </tfoot>
