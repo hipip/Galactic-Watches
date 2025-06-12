@@ -35,7 +35,10 @@ const ImgSpinner = ({ watches }) => {
           <FontAwesomeIcon icon={faArrowLeft} className="arrow-icon" />
         </button>
         <div className="spinner-img-wrapper">
-          <Link to={"watches/" + watches[currentIndex].id}>
+          <Link
+            to={"watches/" + watches[currentIndex].id}
+            key={watches[currentIndex].id}
+          >
             <img
               src={watches[currentIndex].imgUrl}
               alt={watches[currentIndex].name}
